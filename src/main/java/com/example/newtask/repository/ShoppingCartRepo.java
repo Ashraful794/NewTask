@@ -10,4 +10,5 @@ public interface ShoppingCartRepo extends JpaRepository<ShoppingCart,Integer> {
 
     ShoppingCart findByCustomerIdAndProductId(Integer customerId,Integer productId);
 
+
 }

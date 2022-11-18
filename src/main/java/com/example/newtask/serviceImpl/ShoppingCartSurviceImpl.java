@@ -62,4 +62,18 @@ public class ShoppingCartSurviceImpl implements ShoppingCartSurvice {
     public List<ShoppingCart> getAllcartItem() {
         return this.shoppingCartRepo.findAll();
     }
+
+    @Override
+    public String deleteCart(Integer customerId, Integer productId) {
+        ShoppingCart shoppingCart=this.shoppingCartRepo.findByCustomerIdAndProductId(customerId,productId);
+
+        if(shoppingCart==null)
+        {
+            throw new RuntimeException("Item Not Found");
+        }
+
+        this.shoppingCartRepo.delete(shoppingCart);
+        return "Deleted";
+
+    }
 }

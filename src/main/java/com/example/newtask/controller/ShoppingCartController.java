@@ -26,4 +26,10 @@ public class ShoppingCartController {
         return ResponseEntity.ok(this.shoppingCartSurvice.getAllcartItem());
     }
 
+    @DeleteMapping("/deleteCart/customerId/{customerId}/productId/{productId}")
+    public ResponseEntity deleteCart(@PathVariable Integer customerId,@PathVariable Integer productId)
+    {
+        return ResponseEntity.ok(this.shoppingCartSurvice.deleteCart(customerId,productId));
+    }
+
 }
