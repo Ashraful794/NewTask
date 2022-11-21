@@ -6,6 +6,8 @@ import com.example.newtask.service.ProductSurvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductSurviceImpl implements ProductSurvice {
     @Autowired
@@ -14,5 +16,10 @@ public class ProductSurviceImpl implements ProductSurvice {
     @Override
     public Product addProduct(Product product) {
         return this.productRepo.save(product);
+    }
+
+    @Override
+    public List<Product> getProduct() {
+        return this.productRepo.findAll();
     }
 }

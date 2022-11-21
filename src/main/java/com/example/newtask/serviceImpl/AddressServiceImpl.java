@@ -20,7 +20,7 @@ public class AddressServiceImpl implements AddressService {
     @Autowired
     CustomerRepo customerRepo;
     @Override
-    public Address addAddress(Address address,Integer userId) {
+    public Address createAddress(Address address,Integer userId) {
 
         Optional<Customer> customer=this.customerRepo.findById(userId);
 

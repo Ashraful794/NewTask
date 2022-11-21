@@ -11,15 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @PostMapping("/placeOrder/userId/{userId}")
-    public ResponseEntity placeOrder(@RequestBody List<ShoppingCart> shoppingCarts, @PathVariable Integer userId)
+    @PostMapping("/orders/userId/{userId}")
+    public ResponseEntity createOrders(@RequestBody List<ShoppingCart> shoppingCarts, @PathVariable Integer userId)
     {
-        return ResponseEntity.ok(this.orderService.placeOrder(shoppingCarts,userId));
+        return ResponseEntity.ok(this.orderService.createOrders(shoppingCarts,userId));
     }
 
 

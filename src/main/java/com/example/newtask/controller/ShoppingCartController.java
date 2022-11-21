@@ -9,27 +9,26 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.criteria.CriteriaBuilder;
 
 @RestController
-@RequestMapping("/api")
 public class ShoppingCartController {
     @Autowired
     ShoppingCartSurvice shoppingCartSurvice;
 
-    @PostMapping("/addToCart/customerId/{customerId}/productId/{productId}")
+    @PostMapping("/carts/customerId/{customerId}/productId/{productId}")
     public ResponseEntity addToCart(@RequestBody ShoppingCart shoppingCart, @PathVariable Integer customerId, @PathVariable Integer productId)
     {
-        return ResponseEntity.ok(shoppingCartSurvice.addToCart(shoppingCart,customerId,productId));
+        return ResponseEntity.ok(shoppingCartSurvice.createCarts(shoppingCart,customerId,productId));
     }
 
-    @GetMapping("/getCart")
+    @GetMapping("/carts")
     public ResponseEntity getCart()
     {
-        return ResponseEntity.ok(this.shoppingCartSurvice.getAllcartItem());
+        return ResponseEntity.ok(this.shoppingCartSurvice.getCarts());
     }
 
-    @DeleteMapping("/deleteCart/customerId/{customerId}/productId/{productId}")
-    public ResponseEntity deleteCart(@PathVariable Integer customerId,@PathVariable Integer productId)
+    @DeleteMapping("/carts/customerId/{customerId}/productId/{productId}")
+    public ResponseEntity deleteCarts(@PathVariable Integer customerId,@PathVariable Integer productId)
     {
-        return ResponseEntity.ok(this.shoppingCartSurvice.deleteCart(customerId,productId));
+        return ResponseEntity.ok(this.shoppingCartSurvice.deleteCarts(customerId,productId));
     }
 
 }

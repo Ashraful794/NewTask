@@ -5,7 +5,7 @@ import com.example.newtask.model.Customer;
 import java.util.List;
 
 public interface CustomerService {
-    Customer createCustomer(Customer customer);
+    Customer createCustomers(Customer customer);
 
     List<Customer> getCustomers();
 }

@@ -7,15 +7,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
 public class AddressController {
 
     @Autowired
     AddressService addressService;
 
-    @PostMapping("/addaddress/userid/{id}")
-    public ResponseEntity addAddress(@RequestBody Address address, @PathVariable Integer id)
+    @PostMapping("/address/userid/{id}")
+    public ResponseEntity createAddress(@RequestBody Address address, @PathVariable Integer id)
     {
-        return ResponseEntity.ok(this.addressService.addAddress(address,id));
+        return ResponseEntity.ok(this.addressService.createAddress(address,id));
     }
 }

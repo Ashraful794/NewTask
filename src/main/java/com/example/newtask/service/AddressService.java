@@ -4,5 +4,5 @@ import com.example.newtask.model.Address;
 
 public interface AddressService {
 
-    Address addAddress(Address address,Integer userId);
+    Address createAddress(Address address,Integer userId);
 }

@@ -26,7 +26,6 @@ public class Customer {
     @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
     private List<ShoppingCart> shoppingCart;
 
-
     @OneToMany(mappedBy = "customer")
     private List<Orders> orders;
 

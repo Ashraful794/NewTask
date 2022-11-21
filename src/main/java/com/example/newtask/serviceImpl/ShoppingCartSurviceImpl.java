@@ -25,7 +25,7 @@ public class ShoppingCartSurviceImpl implements ShoppingCartSurvice {
     ProductRepo productRepo;
 
     @Override
-    public ShoppingCart addToCart(ShoppingCart shoppingCart,Integer customerId,Integer productId) {
+    public ShoppingCart createCarts(ShoppingCart shoppingCart,Integer customerId,Integer productId) {
 
         Optional<Product> product=this.productRepo.findById(productId);
         Optional<Customer> customer=this.customerRepo.findById(customerId);
@@ -59,12 +59,12 @@ public class ShoppingCartSurviceImpl implements ShoppingCartSurvice {
     }
 
     @Override
-    public List<ShoppingCart> getAllcartItem() {
+    public List<ShoppingCart> getCarts() {
         return this.shoppingCartRepo.findAll();
     }
 
     @Override
-    public String deleteCart(Integer customerId, Integer productId) {
+    public String deleteCarts(Integer customerId, Integer productId) {
         ShoppingCart shoppingCart=this.shoppingCartRepo.findByCustomerIdAndProductId(customerId,productId);
 
         if(shoppingCart==null)

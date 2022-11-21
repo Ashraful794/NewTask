@@ -7,20 +7,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
 public class CustomerController {
 
     @Autowired
     CustomerService customerService;
 
-    @PostMapping("/createCustomer")
+    @PostMapping("/customers")
     public ResponseEntity createCustomer(@RequestBody Customer customer)
     {
-        return ResponseEntity.ok(customerService.createCustomer(customer));
+        return ResponseEntity.ok(customerService.createCustomers(customer));
     }
 
-    @GetMapping("/getCustomers")
-    public ResponseEntity getAllCustomer()
+    @GetMapping("/customers")
+    public ResponseEntity getCustomers()
     {
         return ResponseEntity.ok(customerService.getCustomers());
     }

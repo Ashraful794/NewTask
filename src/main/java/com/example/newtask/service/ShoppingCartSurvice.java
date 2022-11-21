@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ShoppingCartSurvice {
 
-    ShoppingCart addToCart(ShoppingCart shoppingCart,Integer customerId,Integer productId);
-    List<ShoppingCart> getAllcartItem();
+    ShoppingCart createCarts(ShoppingCart shoppingCart,Integer customerId,Integer productId);
+    List<ShoppingCart> getCarts();
 
-    String deleteCart(Integer customerId,Integer productId);
+    String deleteCarts(Integer customerId,Integer productId);
 }

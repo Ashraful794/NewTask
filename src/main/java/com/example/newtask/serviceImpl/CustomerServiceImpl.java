@@ -15,7 +15,7 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerRepo customerRepo;
 
     @Override
-    public Customer createCustomer(Customer customer) {
+    public Customer createCustomers(Customer customer) {
 
         return customerRepo.save(customer);
     }

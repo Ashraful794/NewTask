@@ -17,11 +17,11 @@ public class Product {
     private int availableQuantity;
     private float price;
 
-    @OneToOne(mappedBy = "product")
-    @JsonIgnore
-    private ShoppingCart shoppingCart;
-
-    @OneToOne(mappedBy = "product")
-    @JsonIgnore
-    private OrdersProduct ordersProduct;
+//    @OneToOne(mappedBy = "product")
+//    @JsonIgnore
+//    private ShoppingCart shoppingCart;
+//
+//    @OneToOne(mappedBy = "product")
+//    @JsonIgnore
+//    private OrdersProduct ordersProduct;
 }

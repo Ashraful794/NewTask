@@ -25,13 +25,16 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     CustomerRepo customerRepo;
+
+    @Autowired
+    InvoiceRepo invoiceRepo;
     @Autowired
     ShoppingCartRepo shoppingCartRepo;
 
     @Autowired
     AddressRepo addressRepo;
     @Override
-    public Orders placeOrder(List<ShoppingCart> shoppingCarts,Integer customerId) {
+    public Orders createOrders(List<ShoppingCart> shoppingCarts,Integer customerId) {
 
 
         Optional<Customer> customer=this.customerRepo.findById(customerId);
@@ -64,6 +67,15 @@ public class OrderServiceImpl implements OrderService {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         orders.setDate(dtf.format(now));
+
+        Invoice invoice=new Invoice();
+
+        invoice.setOrder(orders);
+        invoice.setAddress(address);
+        invoice.setCustomer(customer.get());
+
+        this.invoiceRepo.save(invoice);
+
         return this.orderRepo.save(orders);
     }
 }
