@@ -1,7 +1,5 @@
 package com.example.newtask.controller;
 
-//import com.example.newtask.model.Order;
-import com.example.newtask.model.Address;
 import com.example.newtask.model.ShoppingCart;
 import com.example.newtask.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

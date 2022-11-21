@@ -49,7 +49,6 @@ public class OrderServiceImpl implements OrderService {
 
         float grandTotal=0;
         Orders orders=new Orders();
-        orders.setCustomer(customer.get());
         orders=this.orderRepo.save(orders);
 
 

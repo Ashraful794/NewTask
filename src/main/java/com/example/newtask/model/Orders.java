@@ -20,7 +20,4 @@ public class Orders {
     private float grandTotal;
     private String date;
 
-    @ManyToOne
-    @JsonIgnore
-    private Customer customer;
 }

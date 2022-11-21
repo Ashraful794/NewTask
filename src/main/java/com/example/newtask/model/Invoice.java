@@ -18,12 +18,12 @@ public class Invoice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne()
+    @OneToOne
     private Orders order;
 
-    @OneToOne()
+    @OneToOne
     private Address address;
 
-    @OneToOne
+    @ManyToOne
     private Customer customer;
 }
