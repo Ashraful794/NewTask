@@ -77,4 +77,11 @@ public class OrderServiceImpl implements OrderService {
 
         return this.orderRepo.save(orders);
     }
+
+    @Override
+    public List<OrdersProduct> getOrderProduct(Integer customerId) {
+
+        Integer orderId=this.invoiceRepo.findByCustomerId(customerId).getOrder().getId();
+        return this.orderProductRepo.findByOrderId(orderId);
+    }
 }

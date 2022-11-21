@@ -13,10 +13,18 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @PostMapping("/orders/userId/{userId}")
-    public ResponseEntity createOrders(@RequestBody List<ShoppingCart> shoppingCarts, @PathVariable Integer userId)
+
+
+    @PostMapping("/orders/customer/{customerId}")
+    public ResponseEntity createOrders(@RequestBody List<ShoppingCart> shoppingCarts, @PathVariable Integer customerId)
     {
-        return ResponseEntity.ok(this.orderService.createOrders(shoppingCarts,userId));
+        return ResponseEntity.ok(this.orderService.createOrders(shoppingCarts,customerId));
+    }
+
+    @GetMapping("/orders/customerId/{customerId}")
+    public ResponseEntity getOrders(@PathVariable Integer customerId)
+    {
+        return ResponseEntity.ok(this.orderService.getOrderProduct(customerId));
     }
 
 
