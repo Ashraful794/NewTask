@@ -19,10 +19,10 @@ public class ShoppingCartController {
         return ResponseEntity.ok(shoppingCartSurvice.createCarts(shoppingCart,customerId,productId));
     }
 
-    @GetMapping("/carts")
-    public ResponseEntity getCart()
+    @GetMapping("/carts/customerId/{customerId}")
+    public ResponseEntity getCart(@PathVariable Integer customerId)
     {
-        return ResponseEntity.ok(this.shoppingCartSurvice.getCarts());
+        return ResponseEntity.ok(this.shoppingCartSurvice.getCarts(customerId));
     }
 
     @DeleteMapping("/carts/customerId/{customerId}/productId/{productId}")

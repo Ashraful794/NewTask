@@ -59,8 +59,8 @@ public class ShoppingCartSurviceImpl implements ShoppingCartSurvice {
     }
 
     @Override
-    public List<ShoppingCart> getCarts() {
-        return this.shoppingCartRepo.findAll();
+    public List<ShoppingCart> getCarts(Integer customerId) {
+        return this.shoppingCartRepo.findByCustomerId(customerId);
     }
 
     @Override

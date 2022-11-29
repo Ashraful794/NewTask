@@ -20,10 +20,10 @@ public class Customer {
     private String name;
     private String email;
 
-    @OneToOne(mappedBy = "customer",fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "customer")
     private Address address;
 
-    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer")
     private List<ShoppingCart> shoppingCart;
 
 

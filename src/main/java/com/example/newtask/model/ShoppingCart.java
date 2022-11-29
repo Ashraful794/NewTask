@@ -19,6 +19,7 @@ public class ShoppingCart {
     @ManyToOne
     @JsonIgnore
     private Customer customer;
+
     @OneToOne()
     private Product product;
 }
